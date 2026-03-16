@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean name="sbu" class="com.demo.springcore.beans.SBU">
+        <constructor-arg name="sbuCode" value="PES-BU"/>
+        <constructor-arg name="sbuName" value="Product Engineering Service"/>
+        <constructor-arg name="sbuHead" value="Kiran Rao"/>
+        <constructor-arg name="employeeList">
+            <list>
+                <ref bean="emp1"/>
+                <ref bean="emp2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+
+    <bean id="emp1" class="com.demo.springcore.beans.Employee">
+        <constructor-arg name="employeeId" value="12345"/>
+        <constructor-arg name="employeeName" value="Harriet"/>
+        <constructor-arg name="salary" value="40000.0"/>
+        <constructor-arg name="age" value="30"/>
+    </bean>
+
+    <bean id="emp2" class="com.demo.springcore.beans.Employee">
+        <constructor-arg name="employeeId" value="12346"/>
+        <constructor-arg name="employeeName" value="Harry"/>
+        <constructor-arg name="salary" value="40000.0"/>
+        <constructor-arg name="age" value="25"/>
+    </bean>
+</beans>
